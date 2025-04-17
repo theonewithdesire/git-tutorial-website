@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub Guide | By AH Dadjoo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=JetBrains+Mono:wght@400;600;800&family=Space+Mono:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Git<span>Hub</span> Guide</div>
+        <div class="nav-links">
+            <a href="#intro">Intro</a>
+            <a href="#why-git">Why Git?</a>
+            <a href="#installation">Installation</a>
+            <a href="#commands">Commands</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#terminal">Terminal</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="typing-container">
+                <h1 class="typing-text">Master Git & GitHub</h1>
+                <div class="developer-credit">
+                    <span class="typing-credit">Developed by AH Dadjoo</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="intro" class="section">
+            <h2>What are Git & GitHub?</h2>
+            <div class="content-grid">
+                <div class="info-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h3>Git</h3>
+                    <p>Git is a distributed version control system that tracks changes in your code, letting you collaborate seamlessly and maintain code history.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>GitHub is a cloud platform that hosts Git repositories, making it easy to share code, collaborate with others, and showcase your projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-git" class="section">
+            <h2>Why Should You Use Git?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-history"></i>
+                    <h3>Track Changes</h3>
+                    <p>Never lose your work and always know what changed</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborate</h3>
+                    <p>Work with others without stepping on toes</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-code"></i>
+                    <h3>Branch & Merge</h3>
+                    <p>Experiment safely with new features</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Backup</h3>
+                    <p>Keep your code safe in the cloud</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="section">
+            <h2>Installation Guide</h2>
+            <div class="installation-steps">
+                <div class="step">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">Download Git</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">Visit git-scm.com/downloads</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <a href="https://git-scm.com/downloads" target="_blank" class="terminal-link">🔗 Download Git for your OS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">Install Git - macOS</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">brew install git</span>
+                            </div>
+                            <div class="terminal-line output">
+                                🍺 Successfully installed git
+                            </div>
+                        </div>
+                    </div>
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">Install Git - Windows</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">></span>
+                                <span class="command">winget install --id Git.Git -e --source winget</span>
+                            </div>
+                            <div class="terminal-line output">
+                                Successfully installed Git for Windows
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="terminal-title">Verify Installation</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">git --version</span>
+                            </div>
+                            <div class="terminal-line output">
+                                git version 2.43.0
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">git config --global user.name "Your Name"</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">git config --global user.email "your@email.com"</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="commands" class="section">
+            <h2>Essential Commands</h2>
+            <div class="commands-grid">
+                <div class="command-card">
+                    <h3>Initialize Repository</h3>
+                    <div class="command-line">git init</div>
+                    <p>Create a new Git repository in current directory</p>
+                </div>
+                <div class="command-card">
+                    <h3>Clone Repository</h3>
+                    <div class="command-line">git clone</div>
+                    <p>Download a repository from GitHub</p>
+                </div>
+                <div class="command-card">
+                    <h3>Add Changes</h3>
+                    <div class="command-line">git add</div>
+                    <p>Stage all changes for commit</p>
+                </div>
+                <div class="command-card">
+                    <h3>Commit Changes</h3>
+                    <div class="command-line">git commit</div>
+                    <p>Save staged changes with a description</p>
+                </div>
+                <div class="command-card">
+                    <h3>Push Changes</h3>
+                    <div class="command-line">git push</div>
+                    <p>Upload commits to GitHub</p>
+                </div>
+                <div class="command-card">
+                    <h3>Pull Changes</h3>
+                    <div class="command-line">git pull</div>
+                    <p>Download and merge changes from GitHub</p>
+                </div>
+                <div class="command-card">
+                    <h3>Check Status</h3>
+                    <div class="command-line">git status</div>
+                    <p>View the state of your working directory</p>
+                </div>
+                <div class="command-card">
+                    <h3>View History</h3>
+                    <div class="command-line">git log</div>
+                    <p>Show commit history with details</p>
+                </div>
+                <div class="command-card">
+                    <h3>Switch Branch</h3>
+                    <div class="command-line">git checkout</div>
+                    <p>Switch to a different branch</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section">
+            <h2>Test Your Knowledge</h2>
+            <div class="quiz-container">
+                <div id="quiz-question" class="quiz-question">
+                    <!-- Quiz questions will be populated by JavaScript -->
+                </div>
+                <div id="quiz-options" class="quiz-options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+                <div class="quiz-controls">
+                    <button id="next-question" class="btn primary">
+                        <span class="btn-text">Next Question</span>
+                        <span class="btn-icon">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="terminal" class="section">
+            <h2>Git Terminal Simulator</h2>
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="terminal-title">git-simulator</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line terminal-intro">
+                        <p>Try these commands: <span class="command-highlight">git init</span>, <span class="command-highlight">git clone</span>, <span class="command-highlight">git add</span>, <span class="command-highlight">git commit</span>, <span class="command-highlight">git push</span>, <span class="command-highlight">git pull</span>, <span class="command-highlight">git status</span>, <span class="command-highlight">git log</span>, <span class="command-highlight">git checkout</span></p>
+                    </div>
+                    <div id="terminal-output"></div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">$</span>
+                        <input type="text" id="terminal-input" placeholder="Type a git command...">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Designed with <i class="fas fa-heart"></i> by AH Dadjoo</p>
+            <div class="social-links">
+                <a href="https://github.com/theonewithdesire" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
