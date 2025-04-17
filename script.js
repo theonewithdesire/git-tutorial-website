@@ -159,21 +159,26 @@ function checkAnswer(selectedIndex) {
     options.forEach(option => option.disabled = true);
     
     if (selectedIndex === currentQ.correct) {
-        options[selectedIndex].style.background = '#27c93f';
+        options[selectedIndex].classList.add('correct');
         score++;
     } else {
-        options[selectedIndex].style.background = '#ff5f56';
-        options[currentQ.correct].style.background = '#27c93f';
+        options[selectedIndex].classList.add('incorrect');
+        options[currentQ.correct].classList.add('correct');
     }
+    
+    // Enable the next question button
+    document.getElementById('next-question').style.display = 'flex';
+}
 
-    setTimeout(() => {
-        currentQuestion++;
-        if (currentQuestion < quizQuestions.length) {
-            loadQuestion();
-        } else {
-            showResults();
-        }
-    }, 1500);
+function nextQuestion() {
+    currentQuestion++;
+    if (currentQuestion < quizQuestions.length) {
+        loadQuestion();
+        // Hide the next question button again
+        document.getElementById('next-question').style.display = 'none';
+    } else {
+        showResults();
+    }
 }
 
 function showResults() {
@@ -189,6 +194,7 @@ function resetQuiz() {
     currentQuestion = 0;
     score = 0;
     loadQuestion();
+    document.getElementById('next-question').style.display = 'none';
 }
 
 // Terminal Simulator
@@ -273,6 +279,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Remove the populateCommands call since we're using static HTML
     // populateCommands();
     loadQuestion();
+    
+    // Hide the next question button initially
+    document.getElementById('next-question').style.display = 'none';
+    
+    // Add click handler for next question button
+    document.getElementById('next-question').addEventListener('click', nextQuestion);
     
     // Add smooth scrolling for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
